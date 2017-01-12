@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://travis-ci.org/Pascalebeier/MaengelMelder"><img src="https://travis-ci.org/PascaleBeier/MaengelMelder.svg" alt="Build Status"></a>
+<a href="https://travis-ci.org/PascaleBeier/MaengelMelder"><img src="https://travis-ci.org/PascaleBeier/MaengelMelder.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/pascalebeier/maengelmelder"><img src="https://poser.pugx.org/pascalebeier/maengelmelder/license.svg" alt="License"></a>
 </p>
 
