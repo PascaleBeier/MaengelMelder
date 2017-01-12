@@ -1,0 +1,14 @@
+/node_modules
+/public/storage
+/public/
+!/public/index.php
+!/public/favicon.ico
+!/public/web.config
+!/public/.htaccess
+!/public/robots.txt
+/storage/*.key
+/vendor
+Homestead.json
+Homestead.yaml
+.env
+/.vagrant
