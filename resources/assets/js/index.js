@@ -1,2 +1,7 @@
-require('jquery-validation');
-require('jquery-validation/dist/localization/messages_de');
+$('#submit').click(() => {
+    const form = $('form');
+    form.validate();
+    if (form.valid()) {
+        $(this).button('loading');
+    }
+});

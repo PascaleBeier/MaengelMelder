@@ -51,7 +51,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <script src="{{ url('js/app.js') }}"></script>
     @stack('scripts')
 </body>
 </html>

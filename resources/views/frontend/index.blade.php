@@ -9,7 +9,11 @@
                 <label for="category">Kategorie</label>
                 <select class="form-control" id="category" name="category_id" required>
                     @foreach($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @if (old('category_id') === $category)
+                            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                        @else
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endif
                     @endforeach
                 </select>
                 @if (count($errors->get('category_id')) > 0)
@@ -28,7 +32,7 @@
 
             <div class="form-group">
                 <label for="address">Adresse</label>
-                <input class="form-control" name="address" id="address" required placeholder="{{ $faker->streetAddress }}">
+                <input class="form-control" value="{{ old('address') }}" name="address" id="address" required placeholder="{{ $faker->streetAddress }}">
                 @if (count($errors->get('address')) > 0)
                     <div class="alert alert-danger">
                         <ul>
@@ -45,7 +49,7 @@
 
             <div class="form-group">
                 <label for="body">Beschreibung</label>
-                <textarea class="form-control" id="body" name="body" required></textarea>
+                <textarea class="form-control" id="body" name="body" required>{{ old('body') }}</textarea>
                 @if (count($errors->get('body')) > 0)
                     <div class="alert alert-danger">
                         <ul>
@@ -89,37 +93,9 @@
 @endsection
 
 @push('scripts')
-    <script>
-        $('#submit').click(function () {
-            var form = $('form');
-            form.validate();
-            if (form.valid()) {
-                $(this).button('loading');
-            }
-        });
-    </script>
+    <script src="{{ url('js/index.js') }}"></script>
 @endpush
 
-@if(session()->has('success'))
-    @push('scripts')
-    <script>
-        swal(
-            'Meldung erfolgreich versendet!',
-            'Vielen Dank für Ihre Mithilfe! Wir haben Ihre Meldung erhalten.',
-            'success'
-        )
-    </script>
-    @endpush
-@endif
-
-@if(count($errors->all()) > 0)
-    @push('scripts')
-    <script>
-        swal(
-            'Meldung nicht versendet!',
-            'Bei der Verarbeitung Ihrer Meldung sind Fehler aufgetreten.',
-            'error'
-        )
-    </script>
-    @endpush
+@if(session()->has('title'))
+    @include('shared.flash')
 @endif

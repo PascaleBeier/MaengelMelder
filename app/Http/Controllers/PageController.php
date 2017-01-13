@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Report;
+use Validator;
 
 class PageController extends Controller
 {
@@ -42,8 +43,14 @@ class PageController extends Controller
             'name'
         ]));
 
-        $report->addMedia($request->file('image'))->toCollection('images');
+        if ($request->hasFile('image')) {
+            $report->addMedia($request->file('image'))->toCollection('images');
+        }
 
-        return redirect()->back()->with('success', 'Meldung erfolgreich versendet!');
+        return redirect()->back()->with([
+            'type' => 'success',
+            'title' => 'Meldung erfolgreich versendet!',
+            'message' => 'Vielen Dank für Ihre Mithilfe! Wir haben Ihre Meldung erhalten.'
+        ]);
     }
 }

@@ -6,4 +6,6 @@
 
 window.$ = window.jQuery = require('jquery');
 require('bootstrap-sass');
-window.swal = require('sweetalert2');
+window.swal = require('bootstrap-sweetalert');
+require('jquery-validation');
+require('jquery-validation/dist/localization/messages_de');
