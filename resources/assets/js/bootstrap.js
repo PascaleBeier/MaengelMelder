@@ -3,7 +3,7 @@
  * for JavaScript based Bootstrap features such as modals and tabs. This
  * code may be modified to fit the specific needs of your application.
  */
-
+document.documentElement.className = 'js';
 window.$ = window.jQuery = require('jquery');
 require('bootstrap-sass');
 window.swal = require('bootstrap-sweetalert');

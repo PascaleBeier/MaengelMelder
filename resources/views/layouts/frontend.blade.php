@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de-DE" dir="ltr">
+<html lang="de-DE" dir="ltr" class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,6 +48,7 @@
         </nav>
 
         @yield('content')
+        @stack('no-js')
     </div>
 
     <!-- Scripts -->
