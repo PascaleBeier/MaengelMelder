@@ -4,6 +4,7 @@
 
 @section('content')
     <div class="container">
+
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="category">Kategorie</label>
@@ -65,7 +66,7 @@
             </div>
 
             <div class="form-group">
-                <label for="image">Foto</label>
+                <label for="image">Foto (optional)</label>
                 <input class="form-control" name="image" id="image" type="file">
                 @if (count($errors->get('image')) > 0)
                     <div class="alert alert-danger">
@@ -77,14 +78,17 @@
                     </div>
                 @endif
                 <div class="help-block">
-                    <p>Wenn Sie ein Foto hochladen, werden auch die Standortinformationen des Fotos genutzt.</p>
+                    <p>Sie können zusätzlich ein Foto hochladen. Ihr Foto ist öffentlich einsehbar.</p>
                 </div>
             </div>
 
             {{ csrf_field() }}
 
             <div class="form-group">
-                <button type="submit" id="submit" data-loading-text="Formular wird verarbeitet ..." class="btn btn-primary">Absenden</button>
+                <button type="submit" id="submit"
+                        data-loading-text="Formular wird verarbeitet
+                        <i class='fa fa-circle-o-notch fa-spin fa-fw' aria-hidden='true'></i>"
+                        class="btn btn-primary">Absenden</button>
             </div>
 
         </form>

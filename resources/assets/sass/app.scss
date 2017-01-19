@@ -10,10 +10,6 @@
 // Sweetalert2
 @import "node_modules/bootstrap-sweetalert/dist/sweetalert";
 
-// no-js
-.no-js {
-  display: none;
-}
-html.no-js .no-js {
-  display: block !important;
+#map {
+  height: 350px;
 }

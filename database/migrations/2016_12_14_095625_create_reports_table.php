@@ -16,10 +16,11 @@ class CreateReportsTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->increments('id');
             $table->text('body');
-            $table->string('email')->nullable();
-            $table->string('prename')->nullable();
-            $table->string('name')->nullable();
+            $table->string('email');
+            $table->string('name');
             $table->string('address');
+            $table->double('lat');
+            $table->double('lng');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();

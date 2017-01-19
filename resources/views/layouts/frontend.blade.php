@@ -8,7 +8,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="{{ url('css/app.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -48,7 +48,6 @@
         </nav>
 
         @yield('content')
-        @stack('no-js')
     </div>
 
     <!-- Scripts -->
