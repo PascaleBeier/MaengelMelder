@@ -6,6 +6,41 @@
     <div class="container">
 
         <form method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input class="form-control" value="{{ old('name') }}" name="name" id="name" required placeholder="{{ $faker->name }}">
+                @if (count($errors->get('name')) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->get('name') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <div class="help-block">
+                    Geben Sie Ihren Namen an.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" class="form-control" value="{{ old('email') }}" name="email" id="email" required placeholder="{{ $faker->email }}">
+                @if (count($errors->get('email')) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->get('email') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <div class="help-block">
+                    Geben Sie Ihre E-Mail Adresse an.
+                </div>
+            </div>
+
             <div class="form-group">
                 <label for="category">Kategorie</label>
                 <select class="form-control" id="category" name="category_id" required>
@@ -33,7 +68,7 @@
 
             <div class="form-group">
                 <label for="address">Adresse</label>
-                <input class="form-control" value="{{ old('address') }}" name="address" id="address" required placeholder="{{ $faker->streetAddress }}">
+                <input class="form-control" value="{{ old('address') }}" name="address" id="address" required placeholder="{{ $faker->streetAddress. ', '.$faker->postcode. ' '.$faker->city}}">
                 @if (count($errors->get('address')) > 0)
                     <div class="alert alert-danger">
                         <ul>

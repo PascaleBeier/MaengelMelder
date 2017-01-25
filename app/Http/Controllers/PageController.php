@@ -33,6 +33,7 @@ class PageController extends Controller
             'image' => 'image',
             'address' => 'required|max:255',
             'name' => 'required|max:255',
+            'email' => 'required|max:255',
         ]);
 
         $latLng = $geocode->latLng($request->get('address'));
