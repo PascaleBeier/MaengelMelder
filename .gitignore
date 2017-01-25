@@ -1,6 +1,5 @@
 /node_modules
 /public/storage
-/public/
 !/public/index.php
 !/public/favicon.ico
 !/public/web.config
