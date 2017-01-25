@@ -5,24 +5,39 @@
 
 # MängelMelder
 
-> Für Kommunen und Städte.
+> [WIP] Mängelmelder Für Kommunen und Städte.
 
 ## Systemvoraussetzungen
 
-- PHP >= 7.0
+- PHP >= 7.0 (empfohlen >= 7.1)
 - OpenSSL PHP Extension
 - PDO PHP Extension
 - Mbstring PHP Extension
 - Tokenizer PHP Extension
 - XML PHP Extension
+- MySQL bzw MariaDB (empfohlen >= 5.7.7 bzw >= 10.2.2)
 
 ## Installation
 
+### Herunterladen
+
 `composer create-project pascalebeier/maengelmelder maengelmelder`
 
-`.env befüllen`
+### Konfiguration
 
-`php artisan migrate:refresh --seed` 
+Datenbankverbindung, E-Mail-Konfiguration und Kundenspezifische Einstellungen in der `.env` vornehmen.
+
+### Datenbankschema migrieren
+
+`php artisan migrate`
+
+### Testen
+
+`composer test`
+
+### Demo importieren
+
+`php artisan db:seed`
 
 ## Lizenz
 
