@@ -12,3 +12,11 @@ window.swal = require('bootstrap-sweetalert');
 
 require('jquery-validation');
 require('jquery-validation/dist/localization/messages_de');
+
+$('#submit').click(function () {
+    const form = $('form');
+    form.validate();
+    if (form.valid()) {
+        $(this).button('loading');
+    }
+});

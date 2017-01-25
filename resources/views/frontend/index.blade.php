@@ -96,10 +96,6 @@
 
 @endsection
 
-@push('scripts')
-    <script src="{{ url('js/index.js') }}"></script>
-@endpush
-
 @if(session()->has('title'))
     @include('shared.flash')
 @endif
