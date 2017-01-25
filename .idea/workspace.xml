@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08a8f9a9-d838-40ca-93ed-70ae5820124c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_categories_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_categories_table.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,33 +15,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="favicon.ico" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/favicon.ico">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="robots.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/robots.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="web.config" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/web.config">
           <provider selected="true" editor-type-id="text-editor">
@@ -111,6 +85,36 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="DatabaseSeeder.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-207">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="55" column="21" lean-forward="true" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2014_10_12_000000_create_users_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="18" column="43" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -156,7 +160,6 @@
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/config/mail.php" />
         <option value="$PROJECT_DIR$/config/cache.php" />
-        <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/tests/CreatesApplication.php" />
         <option value="$PROJECT_DIR$/phpunit.xml" />
         <option value="$PROJECT_DIR$/tests/TestCase.php" />
@@ -165,6 +168,7 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/tests/Feature/HomePageTest.php" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_categories_table.php" />
       </list>
     </option>
@@ -334,7 +338,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
-    <property name="SearchEverywhereHistoryKey" value="comp&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/composer.json&#10;database.php&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/config/database.php&#10;config/cache&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/config/cache.php&#10;config/mai&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/config/mail.php&#10;config/app&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/config/app.php&#10;AppSer&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/app/Providers/AppServiceProvider.php&#10;Ma&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/app/Http/Controllers/MapsController.php&#10;RouteServ&#9;null&#9;null&#10;RouteSer&#9;null&#9;null&#10;app.scss&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/resources/assets/sass/app.scss&#10;in&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/resources/assets/js/index.js&#10;index.js&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/resources/assets/js/index.js&#10;api.php&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/routes/api.php&#10;web&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/routes/web.php&#10;maps&#9;null&#9;null&#10;config/app.php&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/config/app.php&#10;app.css&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/public/css/app.css&#10;PageC&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/app/Http/Controllers/PageController.php&#10;config/fi&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/config/filesystems.php&#10;app&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/config/app.php&#10;pageC&#9;null&#9;null&#10;web.php&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/routes/web.php" />
+    <property name="SearchEverywhereHistoryKey" value="database&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/config/database.php&#10;database.php&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/database/seeds/DatabaseSeeder.php&#10;comp&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/composer.json&#10;config/cache&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/config/cache.php&#10;config/mai&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/config/mail.php&#10;config/app&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/config/app.php&#10;AppSer&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/app/Providers/AppServiceProvider.php&#10;Ma&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/app/Http/Controllers/MapsController.php&#10;RouteServ&#9;null&#9;null&#10;RouteSer&#9;null&#9;null&#10;app.scss&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/resources/assets/sass/app.scss&#10;in&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/resources/assets/js/index.js&#10;index.js&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/resources/assets/js/index.js&#10;api.php&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/routes/api.php&#10;web&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/routes/web.php&#10;maps&#9;null&#9;null&#10;config/app.php&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/config/app.php&#10;app.css&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/public/css/app.css&#10;PageC&#9;FILE&#9;file://C:/Users/mail/Code/MaengelMelder/app/Http/Controllers/PageController.php&#10;config/fi&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/config/filesystems.php&#10;app&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/config/app.php&#10;pageC&#9;null&#9;null&#10;web.php&#9;FILE&#9;file://C:/Users/Beier/Code/MaengelMelder/routes/web.php" />
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="node.js.selected.package.standard" value="" />
@@ -440,12 +444,12 @@
       <workItem from="1484286401122" duration="4287000" />
       <workItem from="1484381170993" duration="14755000" />
       <workItem from="1484861623885" duration="7810000" />
-      <workItem from="1485349250404" duration="4811000" />
+      <workItem from="1485349250404" duration="5384000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39465000" />
+    <option name="totallyTimeSpent" value="40038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1688" y="-8" width="1696" height="1026" extended-state="6" />
@@ -597,14 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReportController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -719,26 +715,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="107" column="16" lean-forward="false" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/HomepageTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="23" column="1" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -872,6 +852,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="18" column="43" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-207">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="55" column="21" lean-forward="true" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
           <folding />
         </state>
       </provider>
