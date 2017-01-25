@@ -50,7 +50,7 @@ return [
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'strict' => true,
-            'engine' => 'INNODB ROW_FORMAT=DYNAMIC',
+            'engine' => null,
         ],
 
         'travis' => [
@@ -63,7 +63,7 @@ return [
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'strict' => true,
-            'engine' => 'INNODB ROW_FORMAT=DYNAMIC',
+            'engine' => null,
         ],
 
         'pgsql' => [
