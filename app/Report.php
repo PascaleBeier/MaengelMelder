@@ -13,10 +13,9 @@ class Report extends Model
 
     protected $fillable = [
         'name',
-        'prename',
         'address',
         'body',
         'category_id',
+        'email'
     ];
-
 }

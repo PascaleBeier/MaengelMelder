@@ -3,21 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
-use App\Report;
+use App\ {
+    Report,
+    Category
+};
 use Validator;
-use App\Google\Services\Geocode;
 
 class PageController extends Controller
 {
-    protected $report;
-
-    public function __construct(Report $report)
-    {
-        $this->report = $report;
-    }
-
-
     public function index()
     {
         $categories = Category::all();
@@ -25,7 +18,7 @@ class PageController extends Controller
         return view('frontend.index', compact('categories'));
     }
 
-    public function store(Request $request, Geocode $geocode)
+    public function store(Request $request)
     {
         $this->validate($request, [
             'category_id' => 'required|integer|max:255',
@@ -36,16 +29,8 @@ class PageController extends Controller
             'email' => 'required|max:255',
         ]);
 
-        $latLng = $geocode->latLng($request->get('address'));
-
         $report = new Report();
-        $report->category_id = $request->get('category_id');
-        $report->body = $request->get('body');
-        $report->name = $request->get('name');
-        $report->address = $request->get('address');
-        $report->lat = $latLng['lat'];
-        $report->lng = $latLng['lng'];
-
+        $report->fill($request->all());
         $report->save();
 
         if ($request->hasFile('image')) {
