@@ -11,10 +11,18 @@
 |
 */
 
-Route::get('/', 'PageController@index');
+// Public Routes
+Route::get('/', 'FrontController@index');
+Route::post('/', 'FrontController@store');
 
-Route::post('/', 'PageController@store');
-
+// Login, Logout, Forgot Password
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+// Private Routes
+Route::group(['prefix' => 'home', 'middleware' => 'auth'], function () {
+    Route::get('/', 'HomeController@index');
+    Route::resource('/reports', 'ReportController');
+    Route::resource('/users', 'UserController');
+    Route::resource('/categories', 'CategoryController');
+});
+

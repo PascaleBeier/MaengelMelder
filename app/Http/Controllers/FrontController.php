@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\ {
+    Http\Requests\StoreReport,
     Report,
     Category
 };
-use Validator;
 
-class PageController extends Controller
+class FrontController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
     public function index()
     {
         $categories = Category::all();
@@ -18,21 +23,19 @@ class PageController extends Controller
         return view('frontend.index', compact('categories'));
     }
 
-    public function store(Request $request)
+    /**
+     * Store the incoming report.
+     *
+     * @param StoreReport $request
+     * @return Response
+     */
+    public function store(StoreReport $request)
     {
-        $this->validate($request, [
-            'category_id' => 'required|integer|max:255',
-            'body' => 'required',
-            'image' => 'image',
-            'address' => 'required|max:255',
-            'name' => 'required|max:255',
-            'email' => 'required|max:255',
-        ]);
-
         $report = new Report();
         $report->fill($request->all());
         $report->save();
 
+        // If an image was uploaded an validated, attach it to the just created report.
         if ($request->hasFile('image')) {
             $report->addMedia($request->file('image'))->toCollection('images');
         }
