@@ -2216,9 +2216,9 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-laravel-mix@^0.5.3:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-0.5.6.tgz#ddfa95233333242bcb7b9d2a7bbfc3a267a05def"
+laravel-mix@^0.5.9:
+  version "0.5.9"
+  resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-0.5.9.tgz#4ca6a25fc53198e6e32fa7b1fa30111e684a5093"
   dependencies:
     babel-core "^6.20.0"
     babel-loader "^6.2.9"
@@ -2706,8 +2706,8 @@ node-pre-gyp@^0.6.29:
     tar-pack "~3.3.0"
 
 node-sass@^4.0.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.3.0.tgz#d014f64595d77b26af99e9f7a7e74704d9976bda"
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.4.0.tgz#ff08ff2fded2a1d0bee270e8ed1275f7bc9c5a16"
   dependencies:
     async-foreach "^0.1.3"
     chalk "^1.1.1"
@@ -3982,6 +3982,10 @@ to-fast-properties@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-1.0.2.tgz#f3f5c0c3ba7299a7ef99427e44633257ade43320"
 
+toastr@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/toastr/-/toastr-2.1.2.tgz#fd69066ae7578a5b3357725fc9c7c335e9b681df"
+
 tough-cookie@~2.3.0:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.3.2.tgz#f081f76e4c85720e6c37a5faced737150d84072a"
@@ -4125,8 +4129,8 @@ vue-hot-reload-api@^2.0.1:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.0.8.tgz#b3ba6a9a443d561b14f2785c8ea056618cb2faa3"
 
 vue-loader@^10.0.2:
-  version "10.0.3"
-  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-10.0.3.tgz#c9c1093cffbb7d41cfc56e0cab1b9f68d0cfd343"
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-10.1.0.tgz#bc95ca8f605d674a407ad24783e7a907e0e01eaf"
   dependencies:
     consolidate "^0.14.0"
     hash-sum "^1.0.2"
