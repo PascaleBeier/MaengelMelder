@@ -13,10 +13,18 @@ class DatabaseSeeder extends Seeder
     {
 
         DB::table('users')->insert([
-            'name' => 'admin',
-            'password' => bcrypt('admin'),
-            'email' => 'admin@maengelmelder.app',
+            [
+                'name' => 'admin',
+                'password' => bcrypt('admin'),
+                'email' => 'admin@maengelmelder.app',
+            ],
+            [
+                'name' => 'frank',
+                'password' => bcrypt('frank'),
+                'email' => 'frank@maengelmelder.app'
+            ]
         ]);
+
 
         $categories = [
             'Anregungen und Lob',

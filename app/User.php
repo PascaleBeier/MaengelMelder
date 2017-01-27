@@ -2,8 +2,12 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\ {
+    Database\Eloquent\Collection,
+    Database\Query\Builder,
+    Notifications\Notifiable,
+    Foundation\Auth\User as Authenticatable
+};
 
 class User extends Authenticatable
 {
@@ -28,12 +32,10 @@ class User extends Authenticatable
     ];
 
     /**
-     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function categories()
     {
-        return $this->belongsToMany(Category::class)
-            ->withTimestamps();
+        return $this->belongsToMany(Category::class);
     }
 }

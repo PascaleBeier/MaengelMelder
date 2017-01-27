@@ -23,8 +23,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', function () {
         return redirect()->route('reports.index');
     });
+
+    // Parent Model Routes
     Route::resource('/reports', 'ReportController');
     Route::resource('/users', 'UserController');
     Route::resource('/categories', 'CategoryController');
+
+    // Pivot Model Routes
+    Route::get('/categories/{category}/users', 'CategoryUserController@index')
+        ->name('categories.users.index');
+    Route::get('/categories/{category}/users/create', 'CategoryUserController@create')
+        ->name('categories.users.create');
+    Route::post('/categories/{category}/users', 'CategoryUserController@store')
+        ->name('categories.users.store');
 });
 

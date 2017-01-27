@@ -32,6 +32,11 @@
                     </td>
                     <td>
                         {{ count($category->users()->get()) }}
+                        <a href="{{ url('/admin/categories/'.$category->id.'/users') }}" class="btn btn-default">
+                            @component('icon')
+                                users
+                            @endcomponent
+                        </a>
                     </td>
                     <td>
                         <div class="btn-group">
@@ -46,6 +51,7 @@
                     <td>
                         <form style="display: inline" method="post" action="{{ route('categories.update', $category->id) }}">
                             {{ method_field('PATCH') }}
+                            <input type="hidden" name="id" value="{{ $category->id }}">
                             {{ csrf_field() }}
                             @if ($category->is_active)
                                 <input type="hidden" value="0" name="is_active">

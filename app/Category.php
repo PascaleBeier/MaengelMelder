@@ -13,15 +13,18 @@ class Category extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function users()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsToMany(User::class)->withTimestamps();
     }
 
-    public function active()
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    function active()
     {
-        return Category::where('active', true)->get();
+        return Category::all()->where('active', true);
     }
 }
