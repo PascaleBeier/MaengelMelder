@@ -52,6 +52,8 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
-    @stack('scripts')
+    @if(session()->has('flash.driver'))
+        @include('shared.flash')
+    @endif
 </body>
 </html>

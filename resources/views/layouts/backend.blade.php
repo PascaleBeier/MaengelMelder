@@ -42,19 +42,25 @@
                     <ul class="nav navbar-nav">
                         <li>
                             <a href="{{ route('reports.index') }}">
-                                <i class="fa fa-fw fa-bullhorn" aria-hidden="true"></i>
+                                @component('icon')
+                                    bullhorn
+                                @endcomponent
                                 Meldungen
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('categories.index') }}">
-                                <i class="fa fa-fw fa-sitemap" aria-hidden="true"></i>
+                                @component('icon')
+                                    sitemap
+                                @endcomponent
                                 Kategorien
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('users.index') }}">
-                                <i class="fa fa-fw fa-users" aria-hidden="true"></i>
+                                @component('icon')
+                                    users
+                                @endcomponent
                                 Mitarbeiter
                             </a>
                         </li>
@@ -71,7 +77,9 @@
                                     <a href="{{ url('/logout') }}"
                                        onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                        <i class="fa fa-fw fa-sign-out" aria-hidden="true"></i>
+                                        @component('icon')
+                                            sign-out
+                                        @endcomponent
                                         Logout
                                     </a>
 
@@ -92,6 +100,8 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
-    @stack('scripts')
+    @if(session()->has('flash.driver'))
+        @include('shared.flash')
+    @endif
 </body>
 </html>

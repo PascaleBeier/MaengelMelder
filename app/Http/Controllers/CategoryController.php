@@ -73,7 +73,12 @@ class CategoryController extends Controller
     {
         $category->update($request->all());
 
-        return redirect()->back();
+        return redirect()->back()->with([
+            'flash.driver' => 'toastr',
+            'flash.type' => 'success',
+            'flash.title' => 'Erfolg',
+            'flash.message' => 'Kategorie ' . $category->name .' aktualisiert'
+        ]);
     }
 
     /**

@@ -41,9 +41,10 @@ class FrontController extends Controller
         }
 
         return redirect()->back()->with([
-            'type' => 'success',
-            'title' => 'Meldung erfolgreich versendet!',
-            'message' => 'Vielen Dank für Ihre Mithilfe! Wir haben Ihre Meldung erhalten.'
+            'flash.driver' => 'swal',
+            'flash.type' => 'success',
+            'flash.title' => 'Meldung erfolgreich versendet!',
+            'flash.message' => 'Vielen Dank für Ihre Mithilfe! Wir haben Ihre Meldung erhalten.'
         ]);
     }
 }

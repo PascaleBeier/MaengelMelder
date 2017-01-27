@@ -9,9 +9,11 @@ window.$ = window.jQuery = require('jquery');
 require('bootstrap-sass');
 
 window.swal = require('bootstrap-sweetalert');
+window.toastr = require('toastr');
 
 require('jquery-validation');
 require('jquery-validation/dist/localization/messages_de');
+
 
 $('#submit').click(function () {
     const form = $('form');

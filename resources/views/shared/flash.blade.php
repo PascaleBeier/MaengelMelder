@@ -1,9 +1,23 @@
-@push('scripts')
+@if (session('flash.driver') === 'toastr')
     <script>
-        swal(
-            '{{ session('title') }}',
-            '{{ session('message') }}',
-            '{{ session('type') }}'
-        )
+        @if (session('flash.type') === 'success')
+            toastr.success(
+                '{{ session('flash.message') }}',
+                '{{ session('flash.title') }}'
+            );
+        @else
+            toastr.error(
+                '{{ session('flash.message') }}',
+                '{{ session('flash.title') }}'
+            );
+        @endif
     </script>
-@endpush
+@else
+<script>
+    swal(
+        '{{ session('flash.title') }}',
+        '{{ session('flash.message') }}',
+        '{{ session('flash.type') }}'
+    );
+</script>
+@endif

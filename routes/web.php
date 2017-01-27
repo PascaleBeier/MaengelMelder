@@ -19,8 +19,10 @@ Route::post('/', 'FrontController@store');
 Auth::routes();
 
 // Private Routes
-Route::group(['prefix' => 'home', 'middleware' => 'auth'], function () {
-    Route::get('/', 'HomeController@index');
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::get('/', function () {
+        return redirect()->route('reports.index');
+    });
     Route::resource('/reports', 'ReportController');
     Route::resource('/users', 'UserController');
     Route::resource('/categories', 'CategoryController');
