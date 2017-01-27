@@ -26,7 +26,7 @@ class HomeCategoryIndex extends TestCase
 
         $this->actingAs($user);
 
-        $response = $this->get('/home/categories/');
+        $response = $this->get('/admin/categories');
 
         $categories->each(function ($category) use ($response) {
             $response->assertSee($category->name);
