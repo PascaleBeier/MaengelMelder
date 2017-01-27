@@ -1,53 +1,74 @@
 @extends('layouts.backend')
 
 @section('content')
-    <div class="jumbotron">
-        <div class="container">
-            <h2>
-                <i class="fa fa-fw fa-sitemap" aria-hidden="true"></i>
-                Kategorien
-            </h2>
-            <p>Kategorien und zugeordnete Mitarbeiter verwalten.</p>
-        </div>
-    </div>
+
+    @component('jumbotron')
+
+        @slot('heading')
+            @component('icon')
+                sitemap
+            @endcomponent
+            Kategorien
+        @endslot
+        Kategorien und zugewiesene Mitarbeiter verwalten.
+
+    @endcomponent
+
     <div class="container">
-        <div class="table-responsive">
-            <table class="table table-striped">
-                <thead>
+
+        @component('table')
+
+            @slot('thead')
+                <th>Name</th>
+                <th>Mitarbeiter</th>
+                <th>Aktionen</th>
+                <th>Aktiv</th>
+            @endslot
+
+            @foreach($categories as $category)
                 <tr>
-                    <th>Name</th>
-                    <th>Mitarbeiter</th>
-                    <th>Aktionen</th>
+                    <td>
+                        {{ $category->name }}
+                    </td>
+                    <td>
+                        {{ count($category->users()->get()) }}
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-default">
+                                @component('icon')
+                                    edit
+                                @endcomponent
+                                Bearbeiten
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <form style="display: inline" method="post" action="{{ route('categories.update', $category->id) }}">
+                            {{ method_field('PATCH') }}
+                            {{ csrf_field() }}
+                            @if ($category->is_active)
+                                <input type="hidden" value="0" name="is_active">
+                                <button type="submit" class="btn btn-success">
+                                    @component('icon')
+                                        eye
+                                    @endcomponent
+                                </button>
+                            @else
+                                <input type="hidden" value="1" name="is_active">
+                                <button type="submit" class="btn btn-danger">
+                                    @component('icon')
+                                        eye-slash
+                                    @endcomponent
+                                </button>
+                            @endif
+                        </form>
+                    </td>
                 </tr>
-                </thead>
-                <tbody>
-                    @foreach($categories as $category)
-                        <tr>
-                            <td>
-                                {{ $category->name }}
-                            </td>
-                            <td>
-                                {{ count($category->users()->get()) }}
-                            </td>
-                            <td>
-                                <div class="btn-group">
-                                    <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-default">Bearbeiten</a>
-                                    <button type="button"
-                                            onclick="event.preventDefault();
-                                                     document.querySelector('form').submit();"
-                                            class="btn btn-danger">
-                                        <i class="fa fa-fw fa-trash" aria-hidden="true"></i>
-                                    </button>
-                                    <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: none;">
-                                        {{ method_field('DELETE') }}
-                                        {{ csrf_field() }}
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+            @endforeach
+
+        @endcomponent
+
     </div>
+
 @endsection

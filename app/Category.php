@@ -9,6 +9,7 @@ class Category extends Model
     protected $fillable = [
         'name',
         'body',
+        'is_active'
     ];
 
     /**
@@ -17,5 +18,10 @@ class Category extends Model
     public function users()
     {
         return $this->hasMany(User::class);
+    }
+
+    public function active()
+    {
+        return Category::where('active', true)->get();
     }
 }
