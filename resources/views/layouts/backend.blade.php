@@ -100,8 +100,6 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
-    @if(session()->has('flash.driver'))
-        @include('shared.flash')
-    @endif
+    @include('flash')
 </body>
 </html>

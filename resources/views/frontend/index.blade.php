@@ -132,5 +132,5 @@
 @endsection
 
 @if(session()->has('title'))
-    @include('shared.flash')
+    @include('flash')
 @endif
