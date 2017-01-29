@@ -6,8 +6,10 @@ use Illuminate\Http\Response;
 use App\ {
     Http\Requests\StoreReport,
     Report,
-    Category
+    Category,
+    Mail\ReportSent
 };
+use Illuminate\Support\Facades\Mail;
 
 class FrontController extends Controller
 {
@@ -39,6 +41,10 @@ class FrontController extends Controller
         if ($request->hasFile('image')) {
             $report->addMedia($request->file('image'))->toCollection('images');
         }
+
+        // Send a confirmation E-Mail
+        Mail::to($request->email)
+            ->send(new ReportSent($report));
 
         return redirect()->back()->with([
             'flash.driver' => 'swal',
