@@ -4,8 +4,7 @@
 Wir haben Ihre nachfolgende Meldung erhalten und bearbeiten diese schnellstmöglich.
 
 @component('mail::panel')
-Ihre Meldung
-@endcomponent
+## Ihre Meldung
 
 @component('mail::table')
 |               |                               |
@@ -13,9 +12,11 @@ Ihre Meldung
 | Kategorie    	| {{ $report->category->name }} |
 | Adresse      	| {{ $report->address }}        |
 | Beschreibung 	| {{ $report->body }}           |
+@endcomponent
 
+@endcomponent
 
 Vielen Dank,<br>
 {{ config('app.client') }}
-@endcomponent
+
 @endcomponent

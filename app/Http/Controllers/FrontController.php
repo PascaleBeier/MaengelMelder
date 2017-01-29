@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Response;
-use App\ {
-    Http\Requests\StoreReport,
-    Report,
-    Category,
-    Mail\ReportSent
+use App\{
+    Events\UserSentReportEvent, Http\Requests\StoreReport, Mail\SentReport, Report, Category, Mail\ReportSent
 };
 use Illuminate\Support\Facades\Mail;
 
@@ -37,14 +34,7 @@ class FrontController extends Controller
         $report->fill($request->all());
         $report->save();
 
-        // If an image was uploaded an validated, attach it to the just created report.
-        if ($request->hasFile('image')) {
-            $report->addMedia($request->file('image'))->toCollection('images');
-        }
-
-        // Send a confirmation E-Mail
-        Mail::to($request->email)
-            ->send(new ReportSent($report));
+        event(new UserSentReportEvent($report, $request));
 
         return redirect()->back()->with([
             'flash.driver' => 'swal',

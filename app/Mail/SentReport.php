@@ -7,9 +7,8 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Report;
-use App\Category;
 
-class ReportSent extends Mailable
+class SentReport extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -38,8 +37,9 @@ class ReportSent extends Mailable
      */
     public function build()
     {
-        $this->subject(config('app.client') . ' ' .  config('app.name') . ' Meldung erhalten');
+        $subject = config('app.client') . ' - ' .  config('app.name') .  ': Meldung erhalten';
 
-        return $this->markdown('emails.report-sent');
+        return $this->markdown('emails.sent-report')
+            ->subject($subject);
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
 
-class Report extends Model
+class Report extends Model implements hasMedia
 {
     use HasMediaTrait;
 
