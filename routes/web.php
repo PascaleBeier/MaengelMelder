@@ -12,8 +12,12 @@
 */
 
 // Public Routes
-Route::get('/', 'FrontController@index');
-Route::post('/', 'FrontController@store');
+Route::get('/', function (App\Category $category) {
+    $categories = $category->all();
+
+    return view('frontend.index', compact('categories'));
+});
+Route::post('/', 'ReportController@store');
 
 // Authentication Routes
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

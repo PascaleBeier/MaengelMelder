@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Report;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
+use App\Events\UserSentReportEvent;
+use App\Http\Requests\StoreReport;
+use Illuminate\Support\Facades\Auth;
 
 class ReportController extends Controller
 {
@@ -30,12 +34,24 @@ class ReportController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  StoreReport  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreReport $request)
     {
-        //
+        $report = new Report();
+        $report->fill($request->all());
+        $report->save();
+
+        event(new UserSentReportEvent($report, $request));
+
+        return redirect()->back()->with([
+            'flash.driver'  => Auth::guest() ? 'swal' : 'toastr',
+            'flash.type'    => 'success',
+            'flash.title'   => 'Meldung erfolgreich versendet!',
+            'flash.message' => 'Vielen Dank für Ihre Mithilfe! Wir haben Ihre Meldung erhalten.'
+        ]);
+
     }
 
     /**
