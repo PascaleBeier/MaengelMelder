@@ -529,16 +529,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.33",
+            "version": "1.0.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "5c7f98498b12d47f9de90ec9186a90000125777c"
+                "reference": "469ad53c13ea19a0e54e3e5d70f61227ddcc0299"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/5c7f98498b12d47f9de90ec9186a90000125777c",
-                "reference": "5c7f98498b12d47f9de90ec9186a90000125777c",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/469ad53c13ea19a0e54e3e5d70f61227ddcc0299",
+                "reference": "469ad53c13ea19a0e54e3e5d70f61227ddcc0299",
                 "shasum": ""
             },
             "require": {
@@ -608,7 +608,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2017-01-23T10:32:09+00:00"
+            "time": "2017-01-30T17:41:17+00:00"
         },
         {
             "name": "league/glide",
@@ -1177,16 +1177,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "4.12.1",
+            "version": "4.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "c70c6e2b7812deafbb166b113c3a35890ecc66f3"
+                "reference": "89432693fa66aa101499f0f89cfcdec51a620471"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/c70c6e2b7812deafbb166b113c3a35890ecc66f3",
-                "reference": "c70c6e2b7812deafbb166b113c3a35890ecc66f3",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/89432693fa66aa101499f0f89cfcdec51a620471",
+                "reference": "89432693fa66aa101499f0f89cfcdec51a620471",
                 "shasum": ""
             },
             "require": {
@@ -1244,7 +1244,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2017-01-27T21:22:38+00:00"
+            "time": "2017-01-30T13:33:03+00:00"
         },
         {
             "name": "spatie/pdf-to-image",

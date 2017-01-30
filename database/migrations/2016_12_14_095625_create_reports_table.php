@@ -21,6 +21,7 @@ class CreateReportsTable extends Migration
             $table->string('address');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->boolean('is_resolved')->default(false);
             $table->timestamps();
         });
     }

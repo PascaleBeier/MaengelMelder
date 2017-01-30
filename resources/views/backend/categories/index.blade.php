@@ -19,6 +19,7 @@
         @component('table')
 
             @slot('thead')
+                <th>#</th>
                 <th>Name</th>
                 <th>Mitarbeiter</th>
                 <th>Aktionen</th>
@@ -27,6 +28,9 @@
 
             @foreach($categories as $category)
                 <tr>
+                    <td>
+                        {{ $category->id }}
+                    </td>
                     <td>
                         {{ $category->name }}
                     </td>
