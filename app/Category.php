@@ -23,8 +23,8 @@ class Category extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    function active()
+    public static function active()
     {
-        return Category::all()->where('active', true);
+        return self::select('id', 'name')->where('is_active', true)->get();
     }
 }

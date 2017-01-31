@@ -7,6 +7,8 @@
 
         <form method="post" enctype="multipart/form-data">
 
+            {{ csrf_field() }}
+
             <div class="form-group">
                 <label for="name">Name</label>
                 <input class="form-control" value="{{ old('name') }}" name="name" id="name" required placeholder="{{ $faker->name }}">
@@ -102,7 +104,7 @@
 
             <div class="form-group">
                 <label for="image">Foto (optional)</label>
-                <input class="form-control" name="image" id="image" type="file">
+                <input class="fileinput form-control" name="image" id="image" type="file">
                 @if (count($errors->get('image')) > 0)
                     <div class="alert alert-danger">
                         <ul>
@@ -116,8 +118,6 @@
                     <p>Sie können zusätzlich ein Foto hochladen. Ihr Foto ist öffentlich einsehbar.</p>
                 </div>
             </div>
-
-            {{ csrf_field() }}
 
             <div class="form-group">
                 <button type="submit" id="submit"

@@ -12,8 +12,8 @@
 */
 
 // Public Routes
-Route::get('/', function (App\Category $category) {
-    $categories = $category->all();
+Route::get('/', function () {
+    $categories = \App\Category::active();
 
     return view('frontend.index', compact('categories'));
 });

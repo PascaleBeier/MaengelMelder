@@ -10,6 +10,7 @@
     "laravel-mix": "^0.5.16"
   },
   "dependencies": {
+    "bootstrap-fileinput": "^4.3.6",
     "bootstrap-sass": "^3.3.7",
     "bootstrap-sweetalert": "^1.0.1",
     "datatables.net": "^2.1.1",
