@@ -25616,33 +25616,37 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1
 __webpack_require__(13);
 window.toastr = __webpack_require__(16);
 
+var language = {
+    "sEmptyTable": "Keine Daten in der Tabelle vorhanden",
+    "sInfo": "_START_ bis _END_ von _TOTAL_ Einträgen",
+    "sInfoEmpty": "0 bis 0 von 0 Einträgen",
+    "sInfoFiltered": "(gefiltert von _MAX_ Einträgen)",
+    "sInfoPostFix": "",
+    "sInfoThousands": ".",
+    "sLengthMenu": "_MENU_ Einträge anzeigen",
+    "sLoadingRecords": "Wird geladen...",
+    "sProcessing": "Bitte warten...",
+    "sSearch": "Suchen",
+    "sZeroRecords": "Keine Einträge vorhanden.",
+    "oPaginate": {
+        "sFirst": "Erste",
+        "sPrevious": "Zurück",
+        "sNext": "Nächste",
+        "sLast": "Letzte"
+    },
+    "oAria": {
+        "sSortAscending": ": aktivieren, um Spalte aufsteigend zu sortieren",
+        "sSortDescending": ": aktivieren, um Spalte absteigend zu sortieren"
+    }
+};
+
 // jQuery Document Ready Function
 $(function () {
     // Sortable Tables with datable.net
-    $('table.dataTable').DataTable({
-        'language': {
-            "sEmptyTable": "Keine Daten in der Tabelle vorhanden",
-            "sInfo": "_START_ bis _END_ von _TOTAL_ Einträgen",
-            "sInfoEmpty": "0 bis 0 von 0 Einträgen",
-            "sInfoFiltered": "(gefiltert von _MAX_ Einträgen)",
-            "sInfoPostFix": "",
-            "sInfoThousands": ".",
-            "sLengthMenu": "_MENU_ Einträge anzeigen",
-            "sLoadingRecords": "Wird geladen...",
-            "sProcessing": "Bitte warten...",
-            "sSearch": "Suchen",
-            "sZeroRecords": "Keine Einträge vorhanden.",
-            "oPaginate": {
-                "sFirst": "Erste",
-                "sPrevious": "Zurück",
-                "sNext": "Nächste",
-                "sLast": "Letzte"
-            },
-            "oAria": {
-                "sSortAscending": ": aktivieren, um Spalte aufsteigend zu sortieren",
-                "sSortDescending": ": aktivieren, um Spalte absteigend zu sortieren"
-            }
-        }
+    $('.categories table').DataTable({
+        columns: [null, null, null, { orderable: false }, null],
+        paging: false,
+        language: language
     });
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))

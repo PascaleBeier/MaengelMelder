@@ -42,7 +42,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('/categories', 'CategoryController');
 
     // Pivot Model Routes
+
+    // Category => Users
     Route::get('/categories/{category}/users', 'CategoryUserController@index')->name('categories.users.index');
     Route::get('/categories/{category}/users/create', 'CategoryUserController@create')->name('categories.users.create');
     Route::post('/categories/{category}/users', 'CategoryUserController@store')->name('categories.users.store');
+
+    // User => Categories
+    Route::get('/users/{user}/categories', 'UserCategoryController@index')->name('users.categories.index');
+    Route::get('/users/{user}/categories/create', 'UserCategoryController@create')->name('users.categories.create');
+    Route::post('/users/{user}/categories', 'UserCategoryController@store')->name('users.categories.store');
 });

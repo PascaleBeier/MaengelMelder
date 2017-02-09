@@ -6,11 +6,11 @@
 
         @slot('heading')
             @component('icon')
-                sitemap
+                users
             @endcomponent
-            Kategorien
+            Mitarbeiter
         @endslot
-        Kategorien und zugewiesene Mitarbeiter verwalten.
+        Mitarbeiter und zugewiesene Kategorien verwalten.
 
     @endcomponent
 
@@ -21,30 +21,30 @@
             @slot('thead')
                 <th>#</th>
                 <th>Name</th>
-                <th>Mitarbeiter</th>
+                <th>Kategorien</th>
                 <th>Aktionen</th>
                 <th>Aktiv</th>
             @endslot
 
-            @foreach($categories as $category)
+            @foreach($users as $user)
                 <tr>
                     <td>
-                        {{ $category->id }}
+                        {{ $user->id }}
                     </td>
                     <td>
-                        {{ $category->name }}
+                        {{ $user->name }}
                     </td>
                     <td>
-                        {{ count($category->users()->get()) }}
-                        <a href="{{ url('/admin/categories/'.$category->id.'/users') }}" class="btn btn-default">
+                        {{ count($user->categories()->get()) }}
+                        <a href="{{ route('users.categories.create', $user->id) }}" class="btn btn-default">
                             @component('icon')
-                                users
+                                sitemap
                             @endcomponent
                         </a>
                     </td>
                     <td>
                         <div class="btn-group">
-                            <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-default">
+                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-default">
                                 @component('icon')
                                     edit
                                 @endcomponent
@@ -53,11 +53,11 @@
                         </div>
                     </td>
                     <td>
-                        <form style="display: inline" method="post" action="{{ route('categories.update', $category->id) }}">
+                        <form style="display: inline" method="post" action="{{ route('users.update', $user->id) }}">
                             {{ method_field('PATCH') }}
-                            <input type="hidden" name="id" value="{{ $category->id }}">
+                            <input type="hidden" name="id" value="{{ $user->id }}">
                             {{ csrf_field() }}
-                            @if ($category->is_active)
+                            @if ($user->is_active)
                                 <span class="hidden">1</span>
                                 <input type="hidden" value="0" name="is_active">
                                 <button type="submit" class="btn btn-success">

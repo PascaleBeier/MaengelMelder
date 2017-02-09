@@ -10,7 +10,6 @@ require('bootstrap-sass/assets/javascripts/bootstrap/dropdown');
 require('bootstrap-sass/assets/javascripts/bootstrap/transition');
 require('bootstrap-sass/assets/javascripts/bootstrap/button');
 require('bootstrap-sass/assets/javascripts/bootstrap/collapse');
-require('bootstrap-sass/assets/javascripts/bootstrap/tooltip');
 
 require('bootstrap-sweetalert');
 require('jquery-validation');
