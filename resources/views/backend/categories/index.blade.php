@@ -55,7 +55,6 @@
                     <td>
                         <form style="display: inline" method="post" action="{{ route('categories.update', $category->id) }}">
                             {{ method_field('PATCH') }}
-                            <input type="hidden" name="id" value="{{ $category->id }}">
                             {{ csrf_field() }}
                             @if ($category->is_active)
                                 <span class="hidden">1</span>

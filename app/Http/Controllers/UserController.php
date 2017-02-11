@@ -71,7 +71,14 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $user->update($request->all());
+
+        return redirect()->back()->with([
+            'flash.driver' => 'toastr',
+            'flash.type' => 'success',
+            'flash.title' => 'Erfolg',
+            'flash.message' => 'Benutzer '.$user->name.' aktualisiert',
+        ]);
     }
 
     /**

@@ -55,7 +55,6 @@
                     <td>
                         <form style="display: inline" method="post" action="{{ route('users.update', $user->id) }}">
                             {{ method_field('PATCH') }}
-                            <input type="hidden" name="id" value="{{ $user->id }}">
                             {{ csrf_field() }}
                             @if ($user->is_active)
                                 <span class="hidden">1</span>
