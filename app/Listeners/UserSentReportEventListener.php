@@ -2,11 +2,11 @@
 
 namespace App\Listeners;
 
+use App\User;
 use App\Mail\SentReport;
 use App\Events\UserSentReportEvent;
 use App\Mail\SentReportNotification;
 use Illuminate\Support\Facades\Mail;
-use App\User;
 
 class UserSentReportEventListener
 {
