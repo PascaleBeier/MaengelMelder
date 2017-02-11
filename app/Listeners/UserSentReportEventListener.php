@@ -6,6 +6,7 @@ use App\Mail\SentReport;
 use App\Events\UserSentReportEvent;
 use App\Mail\SentReportNotification;
 use Illuminate\Support\Facades\Mail;
+use App\User;
 
 class UserSentReportEventListener
 {
@@ -38,7 +39,7 @@ class UserSentReportEventListener
             ->send(new SentReport($event->report));
 
         // Notify all Users
-        $event->report->category->users()->each(function ($user) use ($event) {
+        $event->report->category->users()->each(function (User $user) use ($event) {
             Mail::to($user->email)
                     ->send(new SentReportNotification($event->report, $user));
         });
