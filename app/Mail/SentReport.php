@@ -2,11 +2,10 @@
 
 namespace App\Mail;
 
+use App\Report;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use App\Report;
 
 class SentReport extends Mailable
 {
@@ -16,7 +15,6 @@ class SentReport extends Mailable
      * @var Report
      */
     public $report;
-
 
     /**
      * ReportSent constructor.
@@ -37,7 +35,7 @@ class SentReport extends Mailable
      */
     public function build()
     {
-        $subject = config('app.client') . ' - ' .  config('app.name') .  ': Meldung erhalten';
+        $subject = config('app.client').' - '.config('app.name').': Meldung erhalten';
 
         return $this->markdown('emails.sent-report')
             ->subject($subject);

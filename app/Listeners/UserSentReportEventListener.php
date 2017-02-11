@@ -2,11 +2,9 @@
 
 namespace App\Listeners;
 
+use App\Mail\SentReport;
 use App\Events\UserSentReportEvent;
 use App\Mail\SentReportNotification;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use App\Mail\SentReport;
 use Illuminate\Support\Facades\Mail;
 
 class UserSentReportEventListener
@@ -41,8 +39,8 @@ class UserSentReportEventListener
 
         // Notify all Users
         $event->report->category->users()->each(function ($user) use ($event) {
-                Mail::to($user->email)
+            Mail::to($user->email)
                     ->send(new SentReportNotification($event->report, $user));
-            });
+        });
     }
 }

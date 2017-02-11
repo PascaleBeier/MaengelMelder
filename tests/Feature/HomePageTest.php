@@ -13,7 +13,7 @@ class HomePageTest extends TestCase
     use DatabaseTransactions;
 
     /**
-     * Ensure that all categories appear on the homepage
+     * Ensure that all categories appear on the homepage.
      *
      * @return void
      */

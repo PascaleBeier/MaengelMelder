@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
 
@@ -16,7 +15,7 @@ class Report extends Model implements hasMedia
         'address',
         'body',
         'category_id',
-        'email'
+        'email',
     ];
 
     /**

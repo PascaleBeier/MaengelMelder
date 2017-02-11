@@ -2,25 +2,23 @@
 
 namespace App\Mail;
 
+use App\User;
+use App\Report;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
-
-use App\User;
-use App\Report;
 
 class SentReportNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
     /**
-     * @var Report $report;
+     * @var Report;
      */
     public $report;
 
     /**
-     * @var User $user;
+     * @var User;
      */
     public $user;
 
@@ -46,7 +44,7 @@ class SentReportNotification extends Mailable
     public function build()
     {
         $attachment = $this->report->getMedia()[0]->getPath();
-        $subject = config('app.client') . ' - ' .  config('app.name') .  ': Meldung erhalten';
+        $subject = config('app.client').' - '.config('app.name').': Meldung erhalten';
 
         return $this->markdown('emails.sent-report-notification')
             ->attach($attachment)

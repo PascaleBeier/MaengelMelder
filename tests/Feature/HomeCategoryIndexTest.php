@@ -2,15 +2,11 @@
 
 namespace Tests\Feature;
 
+use App\ User;
+use App\ Category;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\ {
-    DatabaseMigrations,
-    DatabaseTransactions
-};
-use App\ {
-    User,
-    Category
-};
+use Illuminate\Foundation\Testing\ DatabaseMigrations;
+use Illuminate\Foundation\Testing\ DatabaseTransactions;
 
 class HomeCategoryIndex extends TestCase
 {

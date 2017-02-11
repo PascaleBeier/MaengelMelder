@@ -11,7 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
         DB::table('users')->insert([
             [
                 'name' => 'admin',
@@ -21,26 +20,25 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'frank',
                 'password' => bcrypt('frank'),
-                'email' => 'frank@maengelmelder.app'
-            ]
+                'email' => 'frank@maengelmelder.app',
+            ],
         ]);
-
 
         $categories = [
             'Anregungen und Lob',
             'Beleuchtung',
-            'Graffiti', 
-            'Grünflächen', 
-            'Hundekot', 
-            'Illegaler Müll', 
-            'Radwege', 
+            'Graffiti',
+            'Grünflächen',
+            'Hundekot',
+            'Illegaler Müll',
+            'Radwege',
             'Schulweg',
             'Spielplätze',
             'Straßenschilder',
             'Straßenschäden',
         ];
 
-        foreach($categories as $category) {
+        foreach ($categories as $category) {
             DB::table('categories')->insert([
                 'name' => $category,
                 'body' => '',

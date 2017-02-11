@@ -13,6 +13,6 @@ function flash(string $title, string $message, string $type = 'success') : Illum
         'flash.driver'  => Auth::guest() ? 'swal' : 'toastr',
         'flash.type'    => $type,
         'flash.title'   => $title,
-        'flash.message' => $message
+        'flash.message' => $message,
     ]);
 }

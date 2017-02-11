@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\ User;
+use App\ Category;
 use Illuminate\Http\Request;
-
-use App\ {
-    User,
-    Category
-};
 
 class CategoryUserController extends Controller
 {
