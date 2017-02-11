@@ -9,7 +9,7 @@ class Category extends Model
     protected $fillable = [
         'name',
         'body',
-        'is_active'
+        'is_active',
     ];
 
     /**

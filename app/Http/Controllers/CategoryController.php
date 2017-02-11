@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\Http\Requests\StoreCategory;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -78,7 +77,7 @@ class CategoryController extends Controller
             'flash.driver' => 'toastr',
             'flash.type' => 'success',
             'flash.title' => 'Erfolg',
-            'flash.message' => 'Kategorie ' . $category->name .' aktualisiert'
+            'flash.message' => 'Kategorie '.$category->name.' aktualisiert',
         ]);
     }
 

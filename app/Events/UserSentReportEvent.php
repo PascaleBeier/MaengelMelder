@@ -2,17 +2,14 @@
 
 namespace App\Events;
 
+use App\Report;
 use App\Http\Requests\StoreReport;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Broadcasting\PresenceChannel;
+use App\Http\Requests\StoreReport as Request;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-
-use App\Report;
-use App\Http\Requests\StoreReport as Request;
 
 class UserSentReportEvent
 {

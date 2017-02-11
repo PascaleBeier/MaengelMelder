@@ -2,12 +2,8 @@
 
 namespace App;
 
-use Illuminate\ {
-    Database\Eloquent\Collection,
-    Database\Query\Builder,
-    Notifications\Notifiable,
-    Foundation\Auth\User as Authenticatable
-};
+use Illuminate\ Notifications\Notifiable;
+use Illuminate\ Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {

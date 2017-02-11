@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Report;
 use Illuminate\Http\Request;
-use App\Events\UserSentReportEvent;
 use App\Http\Requests\StoreReport;
-use Illuminate\Support\Facades\Auth;
+use App\Events\UserSentReportEvent;
 
 class ReportController extends Controller
 {
