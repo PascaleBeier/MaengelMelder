@@ -11,7 +11,6 @@ Homestead.json
 Homestead.yaml
 .env
 /.vagrant
-/.idea
 .phpstorm.meta.php
 _ide_helper.php
 yarn-error.log
