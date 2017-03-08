@@ -11919,13 +11919,13 @@ $('#submit').click(function () {
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {/**
+/**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
  * code may be modified to fit the specific needs of your application.
  */
 
-window.$ = __webpack_provided_window_dot_jQuery = __webpack_require__(15);
+window.$ = window.jQuery = __webpack_require__(15);
 
 __webpack_require__(10);
 __webpack_require__(11);
@@ -11935,7 +11935,6 @@ __webpack_require__(9);
 __webpack_require__(12);
 __webpack_require__(2);
 __webpack_require__(14);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 8 */
