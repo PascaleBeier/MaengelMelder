@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use Faker\ Factory;
-use Faker\ Generator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
