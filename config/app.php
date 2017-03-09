@@ -176,12 +176,6 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
-         */
-        Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
-        //
-
-        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,

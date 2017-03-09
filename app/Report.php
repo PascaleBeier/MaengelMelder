@@ -3,12 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
 
-class Report extends Model implements hasMedia
+class Report extends Model
 {
-    use HasMediaTrait;
 
     protected $fillable = [
         'name',
@@ -24,5 +21,13 @@ class Report extends Model implements hasMedia
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function image()
+    {
+        return $this->belongsTo(Image::class);
     }
 }

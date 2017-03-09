@@ -54,9 +54,9 @@ return [
             'visibility' => 'public',
         ],
 
-        'media' => [
+        'images' => [
             'driver' => 'local',
-            'root'   => public_path('media'),
+            'root'   => public_path('images'),
         ],
 
         's3' => [

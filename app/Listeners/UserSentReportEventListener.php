@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\User;
+use App\Image;
 use App\Mail\SentReport;
 use App\Events\UserSentReportEvent;
 use App\Mail\SentReportNotification;
@@ -24,14 +25,20 @@ class UserSentReportEventListener
      * Handle the event.
      *
      * @param  UserSentReportEvent  $event
+     * @param  Image  $image
      * @return void
      */
     public function handle(UserSentReportEvent $event)
     {
         // Attach image to Report if existent
         if ($event->request->hasFile('image')) {
-            $event->report->addMedia($event->request->file('image'))
-                   ->toCollection('report-images');
+            $file = $event->request->file('image');
+            $path = uniqid('img');
+            $file->move(config('filesystems.disks.images.root'), $path . '.jpg');
+            $image = new Image();
+            $image->name = $path;
+            $image->save();
+            $event->report->image()->associate($image);
         }
 
         // Send a confirmation E-Mail
