@@ -34,7 +34,7 @@ class UserSentReportEventListener
         if ($event->request->hasFile('image')) {
             $file = $event->request->file('image');
             $path = uniqid('img');
-            $file->move(config('filesystems.disks.images.root'), $path . '.jpg');
+            $file->move(config('filesystems.disks.images.root'), $path.'.jpg');
             $image = new Image();
             $image->name = $path;
             $image->save();
