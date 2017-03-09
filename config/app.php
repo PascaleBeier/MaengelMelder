@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'MängelMelder'),
+    'name' => env('APP_NAME', 'Mängelmelder'),
 
     /*
     |--------------------------------------------------------------------------
@@ -90,6 +90,7 @@ return [
     */
 
     'locale' => 'de',
+    'faker_locale' => 'de_DE',
 
     /*
     |--------------------------------------------------------------------------
