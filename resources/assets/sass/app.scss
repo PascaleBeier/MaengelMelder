@@ -2,10 +2,10 @@
 @import "bootstrap";
 
 // Font Awesome
-@import "node_modules/font-awesome/scss/font-awesome";
+@import "~font-awesome/scss/font-awesome";
 
 // Sweetalert2
-@import "node_modules/bootstrap-sweetalert/dist/sweetalert";
+@import "~bootstrap-sweetalert/dist/sweetalert";
 
 .navbar-default {
   margin-bottom: 25px;

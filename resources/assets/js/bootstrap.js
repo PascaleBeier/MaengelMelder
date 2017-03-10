@@ -14,3 +14,5 @@ require('bootstrap-sass/assets/javascripts/bootstrap/collapse');
 require('bootstrap-sweetalert');
 require('jquery-validation');
 require('jquery-validation/dist/localization/messages_de');
+require('bootstrap-filestyle/src/bootstrap-filestyle');
+

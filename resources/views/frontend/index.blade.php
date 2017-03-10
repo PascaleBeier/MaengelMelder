@@ -104,7 +104,9 @@
 
             <div class="form-group">
                 <label for="image">Foto (optional)</label>
-                <input class="fileinput form-control" name="image" id="image" type="file">
+                <input class="filestyle" data-iconName="fa fa-file-image-o" data-buttonText="Foto auswählen"
+                       data-buttonBefore="true" data-placeholder="Noch kein Foto ausgewählt"
+                       name="image" id="image" type="file">
                 @if (count($errors->get('image')) > 0)
                     <div class="alert alert-danger">
                         <ul>
