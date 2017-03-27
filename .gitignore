@@ -6,7 +6,6 @@
 !/public/.htaccess
 !/public/robots.txt
 /storage/*.key
-/vendor
 Homestead.json
 Homestead.yaml
 .env
