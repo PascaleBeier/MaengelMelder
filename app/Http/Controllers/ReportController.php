@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Report;
 use App\Image;
+use App\Report;
+use App\Mail\SentReport;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreReport;
-use App\Mail\SentReport;
 use App\Mail\SentReportNotification;
 use Illuminate\Support\Facades\Mail;
 
@@ -73,16 +73,16 @@ class ReportController extends Controller
             });
         }
 
-	    // Attach image to Report if existent
-	    if ($request->hasFile('image')) {
-		    $file = $request->file('image');
-		    $path = uniqid('img');
-		    $file->move(config('filesystems.disks.images.root'), $path.'.jpg');
-		    $image = new Image();
-		    $image->name = $path;
-		    $image->save();
-		    $this->report->image()->associate($image);
-	    }
+        // Attach image to Report if existent
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $path = uniqid('img');
+            $file->move(config('filesystems.disks.images.root'), $path.'.jpg');
+            $image = new Image();
+            $image->name = $path;
+            $image->save();
+            $this->report->image()->associate($image);
+        }
 
         return flash(
             'Meldung erfolgreich versendet!',
