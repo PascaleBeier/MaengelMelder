@@ -24,7 +24,7 @@ return [
     | any other location as required by the application.
     */
 
-    'client' => env('CLIENT_NAME', 'Stadt Herten'),
+    'client' => env('Herten'),
 
     /*
     |--------------------------------------------------------------------------

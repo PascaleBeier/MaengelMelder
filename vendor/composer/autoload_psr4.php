@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'TijsVerkoyen\\CssToInlineStyles\\' => array($vendorDir . '/tijsverkoyen/css-to-inline-styles/src'),
     'Tests\\' => array($baseDir . '/tests'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
@@ -27,6 +29,8 @@ return array(
     'Illuminate\\' => array($vendorDir . '/laravel/framework/src/Illuminate'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
+    'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
+    'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Cron\\' => array($vendorDir . '/mtdowling/cron-expression/src/Cron'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'App\\' => array($baseDir . '/app'),

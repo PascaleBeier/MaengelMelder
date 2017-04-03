@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Report;
+use App\Image;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreReport;
-use App\Events\UserSentReportEvent;
+use App\Mail\SentReport;
+use App\Mail\SentReportNotification;
+use Illuminate\Support\Facades\Mail;
 
 class ReportController extends Controller
 {
@@ -58,7 +61,28 @@ class ReportController extends Controller
             ->fill($request->all())
             ->save();
 
-        event(new UserSentReportEvent($this->report, $request));
+        // Send a confirmation E-Mail
+        Mail::to($this->report->email)
+            ->send(new SentReport($this->report));
+
+        // Notify all Users
+        if (count($this->report->category->users()) > 0) {
+            $this->report->category->users()->each(function (User $user) {
+                Mail::to($user->email)
+                    ->send(new SentReportNotification($this->report, $user));
+            });
+        }
+
+	    // Attach image to Report if existent
+	    if ($request->hasFile('image')) {
+		    $file = $request->file('image');
+		    $path = uniqid('img');
+		    $file->move(config('filesystems.disks.images.root'), $path.'.jpg');
+		    $image = new Image();
+		    $image->name = $path;
+		    $image->save();
+		    $this->report->image()->associate($image);
+	    }
 
         return flash(
             'Meldung erfolgreich versendet!',
