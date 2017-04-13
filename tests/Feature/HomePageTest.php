@@ -13,15 +13,15 @@ class HomePageTest extends TestCase
     use DatabaseTransactions;
 
     /**
-     * Ensure that all categories appear on the homepage.
+     * Ensure that all active categories appear on the homepage.
      *
      * @return void
      */
-    public function testListsCategories()
+    public function testListsActiveCategories()
     {
         $this->seed(\DatabaseSeeder::class);
 
-        $categories = Category::all();
+        $categories = Category::active();
 
         $response = $this->get('/');
 
