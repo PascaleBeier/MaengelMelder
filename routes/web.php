@@ -12,16 +12,7 @@
 */
 
 // Public Routes
-// @todo: Move to Controller
-Route::get('/', function () {
-    $categories = \App\Category::active();
-    // @todo: Use Guzzle for this
-    $response = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address='.config('app.client').',Germany&key='.config('googlemaps.apiKey'));
-    $json = json_decode($response);
-    $bounds = $json->results[0]->geometry->bounds;
-
-    return view('frontend.index', compact('categories', 'bounds'));
-});
+Route::get('/', 'FrontController@index');
 Route::post('/', 'ReportController@store');
 
 // Authentication Routes

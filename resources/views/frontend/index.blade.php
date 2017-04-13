@@ -159,9 +159,9 @@
             /** @type {!HTMLInputElement} */(document.getElementById('address')),
             {
                 bounds: defaultBounds,
-                strictBounds: true,
                 types: ['address'],
-                restrictedComponents: { country: 'de' }
+                restrictedComponents: { country: 'de' },
+                strictBounds: true,
             });
 
         // When the user selects an address from the dropdown, populate the address

@@ -24,7 +24,17 @@ return [
     | any other location as required by the application.
     */
 
-    'client' => env('Herten'),
+    'client' => env('CLIENT_NAME', 'Stadt Herten'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Client Location
+    |--------------------------------------------------------------------------
+    |
+    | This value is used for the Google Maps Integration.
+    */
+
+    'location' => env('CLIENT_LOCATION', 'Herten, Germany'),
 
     /*
     |--------------------------------------------------------------------------
