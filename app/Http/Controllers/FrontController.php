@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Category;
 use GuzzleHttp\Client;
-use Illuminate\Http\Response;
 
 class FrontController extends Controller
 {
@@ -30,7 +27,7 @@ class FrontController extends Controller
     }
 
     /**
-     * Homepage Controller
+     * Homepage Controller.
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
@@ -39,7 +36,7 @@ class FrontController extends Controller
         $categories = $this->category->active();
         $apiResponse = $this->client->get('https://maps.googleapis.com/maps/api/geocode/json', ['query' => [
                 'address' => config('app.location'),
-                'key' => config('googlemaps.apiKey')]])
+                'key' => config('googlemaps.apiKey'), ]])
             ->getBody()
             ->getContents();
 
