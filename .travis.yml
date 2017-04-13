@@ -12,12 +12,20 @@ php:
   - 7.0
   - 7.1
 
+matrix:
+    fast_finish: true
+
+before_install:
+  - travis_retry composer self-update
+
+install:
+  - travis_retry composer install --no-interaction --prefer-source
+
 before_script:
   - cp .env.travis .env
   - mysql -e 'create database homestead;'
-  - composer self-update
   - php artisan key:generate
   - php artisan migrate
   
 script:
-  - composer test
+  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
