@@ -20,7 +20,7 @@ function flash($title, $message, $type = 'success')
 }
 
 /**
- * Redirect to specified named Route with Flash Message
+ * Redirect to specified named Route with Flash Message.
  *
  * @param string $title Flash Message Title
  * @param string $message Flash Message Body
