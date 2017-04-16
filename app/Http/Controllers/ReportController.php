@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Image;
 use App\Report;
-use App\Mail\SentReport;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreReport;
-use App\Mail\SentReportNotification;
-use Illuminate\Support\Facades\Mail;
 
 class ReportController extends Controller
 {
