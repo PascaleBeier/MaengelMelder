@@ -5,16 +5,3 @@
  */
 
 require('./bootstrap');
-
-/**
- * Here comes Application-specific JavaScript.
- */
-
-// Form validation with jquery-validation
-$('#submit').click(function() {
-    const form = $('form');
-    form.validate();
-    if (form.valid()) {
-        $(this).button('loading');
-    }
-});

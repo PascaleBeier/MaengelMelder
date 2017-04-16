@@ -1,7 +1,5 @@
 @extends('layouts.frontend')
 
-@inject('faker', 'Faker\Generator')
-
 @section('content')
     <div class="container">
 
@@ -12,7 +10,7 @@
             <div class="form-group">
                 <label for="name">Name</label>
                 <input class="form-control" value="{{ old('name') }}" name="name" id="name" required
-                       placeholder="{{ $faker->name }}">
+                       placeholder="Ihr Name">
                 @if (count($errors->get('name')) > 0)
                     <div class="alert alert-danger">
                         <ul>
@@ -30,7 +28,7 @@
             <div class="form-group">
                 <label for="email">E-Mail</label>
                 <input type="email" class="form-control" value="{{ old('email') }}" name="email" id="email" required
-                       placeholder="{{ $faker->email }}">
+                       placeholder="Ihre E-Mail Adresse">
                 @if (count($errors->get('email')) > 0)
                     <div class="alert alert-danger">
                         <ul>
@@ -74,7 +72,7 @@
                 <label for="address">Adresse</label>
                 <input class="form-control" value="{{ old('address') }}" name="address" id="address"
                        onfocus="geolocate()"
-                       required placeholder="{{ $faker->streetAddress. ', '.$faker->postcode. ' '.$faker->city}}">
+                       required placeholder="Ihre Adresse">
                 @if (count($errors->get('address')) > 0)
                     <div class="alert alert-danger">
                         <ul>
@@ -91,7 +89,8 @@
 
             <div class="form-group">
                 <label for="body">Beschreibung</label>
-                <textarea class="form-control" id="body" name="body" required>{{ old('body') }}</textarea>
+                <textarea class="form-control" id="body" name="body" required
+                          placeholder="Ihre Mängelbeschreibung">{{ old('body') }}</textarea>
                 @if (count($errors->get('body')) > 0)
                     <div class="alert alert-danger">
                         <ul>

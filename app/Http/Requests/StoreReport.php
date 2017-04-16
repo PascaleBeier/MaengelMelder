@@ -13,6 +13,7 @@ class StoreReport extends FormRequest
      */
     public function authorize()
     {
+        // Reports can be created without authentication
         return true;
     }
 

@@ -73,12 +73,7 @@ class UserController extends Controller
     {
         $user->update($request->all());
 
-        return redirect()->back()->with([
-            'flash.driver' => 'toastr',
-            'flash.type' => 'success',
-            'flash.title' => 'Erfolg',
-            'flash.message' => 'Benutzer '.$user->name.' aktualisiert',
-        ]);
+        return flash('Erfolg', 'Benutzer erfolgreich aktualisiert!');
     }
 
     /**
@@ -89,6 +84,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return flash('Erfolg', 'Benutzer erfolgreich gelöscht!');
     }
 }

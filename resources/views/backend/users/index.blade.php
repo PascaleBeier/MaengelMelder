@@ -8,22 +8,25 @@
             @component('icon')
                 users
             @endcomponent
-            Mitarbeiter
+            Benutzer
         @endslot
-        Mitarbeiter und zugewiesene Kategorien verwalten.
+        Benutzer verwalten.
+
+        @include('back')
 
     @endcomponent
 
     <div class="container categories">
+
+
 
         @component('table')
 
             @slot('thead')
                 <th>#</th>
                 <th>Name</th>
-                <th>Kategorien</th>
                 <th>Aktionen</th>
-                <th>Aktiv</th>
+                <th>Aktiv @component('help') Hier können Sie Benutzer aktivieren und deaktivieren @endcomponent</th>
             @endslot
 
             @foreach($users as $user)
@@ -33,14 +36,6 @@
                     </td>
                     <td>
                         {{ $user->name }}
-                    </td>
-                    <td>
-                        {{ count($user->categories()->get()) }}
-                        <a href="{{ route('users.categories.create', $user->id) }}" class="btn btn-default">
-                            @component('icon')
-                                sitemap
-                            @endcomponent
-                        </a>
                     </td>
                     <td>
                         <div class="btn-group">

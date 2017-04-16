@@ -8,7 +8,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\ DatabaseMigrations;
 use Illuminate\Foundation\Testing\ DatabaseTransactions;
 
-class HomeCategoryIndex extends TestCase
+class AdminCategoryIndex extends TestCase
 {
     use DatabaseMigrations;
     use DatabaseTransactions;

@@ -61,18 +61,6 @@ class ReportController extends Controller
             ->fill($request->all())
             ->save();
 
-        // Send a confirmation E-Mail
-        Mail::to($this->report->email)
-            ->send(new SentReport($this->report));
-
-        // Notify all Users
-        if (count($this->report->category->users()) > 0) {
-            $this->report->category->users()->each(function (User $user) {
-                Mail::to($user->email)
-                    ->send(new SentReportNotification($this->report, $user));
-            });
-        }
-
         // Attach image to Report if existent
         if ($request->hasFile('image')) {
             $file = $request->file('image');
