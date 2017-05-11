@@ -13,12 +13,25 @@ class HomePageTest extends TestCase
     use DatabaseTransactions;
 
     /**
+     * Ensure we are being redirect to the installation.
+     *
+     * @return void
+     */
+    public function testRedirectstoInstallation()
+    {
+        $response = $this->get('/');
+        $response->assertRedirect('/install');
+    }
+
+    /**
      * Ensure that all active categories appear on the homepage.
      *
      * @return void
      */
-    public function testListsActiveCategories()
+    public function testListsActiveCategoriesAfterInstallation()
     {
+        touch(storage_path('installed'));
+
         $this->seed(\DatabaseSeeder::class);
 
         $categories = Category::active();
