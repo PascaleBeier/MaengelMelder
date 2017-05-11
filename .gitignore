@@ -6,6 +6,7 @@
 !/public/.htaccess
 !/public/robots.txt
 /storage/*.key
+/storage/installed
 /.idea
 /vendor
 Homestead.json

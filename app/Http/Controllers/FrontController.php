@@ -33,11 +33,12 @@ class FrontController extends Controller
      */
     public function index()
     {
-        try {
-            $categories = $this->category->active();
-        } catch (QueryException $exception) {
-            return redirect('install');
+        if (!file_exists(storage_path('installed')))  {
+             return redirect('install');
         }
+
+        $categories = $this->category->active();
+
         // Get all active Categories
         $apiResponse = $this->client->get('https://maps.googleapis.com/maps/api/geocode/json', ['query' => [
                 'address' => config('app.location'),
