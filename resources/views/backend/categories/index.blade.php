@@ -21,7 +21,6 @@
             @slot('thead')
                 <th>#</th>
                 <th>Name</th>
-                <th>Mitarbeiter</th>
                 <th>Aktionen</th>
                 <th>Aktiv</th>
             @endslot
@@ -33,14 +32,6 @@
                     </td>
                     <td>
                         {{ $category->name }}
-                    </td>
-                    <td>
-                        {{ count($category->users()->get()) }}
-                        <a href="{{ url('/admin/categories/'.$category->id.'/users') }}" class="btn btn-default">
-                            @component('icon')
-                                users
-                            @endcomponent
-                        </a>
                     </td>
                     <td>
                         <div class="btn-group">
