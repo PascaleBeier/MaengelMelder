@@ -2,7 +2,7 @@
 
 return [
 
-    /**
+    /*
      *
      * Shared translations.
      *
@@ -11,8 +11,7 @@ return [
     'next' => 'Next Step',
     'finish' => 'Install',
 
-
-    /**
+    /*
      *
      * Home page translations.
      *
@@ -22,8 +21,7 @@ return [
         'message' => 'Welcome to the setup wizard.',
     ],
 
-
-    /**
+    /*
      *
      * Requirements page translations.
      *
@@ -32,8 +30,7 @@ return [
         'title' => 'Requirements',
     ],
 
-
-    /**
+    /*
      *
      * Permissions page translations.
      *
@@ -42,8 +39,7 @@ return [
         'title' => 'Permissions',
     ],
 
-
-    /**
+    /*
      *
      * Environment page translations.
      *
@@ -54,11 +50,10 @@ return [
         'success' => 'Your .env file settings have been saved.',
         'errors' => 'Unable to save the .env file, Please create it manually.',
     ],
-    
+
     'install' => 'Install',
 
-
-    /**
+    /*
      *
      * Final page translations.
      *

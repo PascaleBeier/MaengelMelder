@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use GuzzleHttp\Client;
-use Illuminate\Database\QueryException;
 
 class FrontController extends Controller
 {
@@ -33,8 +32,8 @@ class FrontController extends Controller
      */
     public function index()
     {
-        if (!file_exists(storage_path('installed')))  {
-             return redirect('install');
+        if (! file_exists(storage_path('installed'))) {
+            return redirect('install');
         }
 
         $categories = $this->category->active();

@@ -17,7 +17,7 @@ return [
         'pdo',
         'mbstring',
         'tokenizer',
-        'zip'
+        'zip',
     ],
 
     /*
@@ -33,6 +33,6 @@ return [
         'storage/app/'           => '775',
         'storage/framework/'     => '775',
         'storage/logs/'          => '775',
-        'bootstrap/cache/'       => '775'
-    ]
+        'bootstrap/cache/'       => '775',
+    ],
 ];
