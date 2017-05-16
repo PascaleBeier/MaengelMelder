@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use App\Image;
 use App\Report;
 use App\Helpers;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreReport;
-use Psr\Http\Message\ResponseInterface;
+use Illuminate\Http\RedirectResponse;
 
 class ReportController extends Controller
 {
@@ -71,7 +70,7 @@ class ReportController extends Controller
         // Attach image to Report if existent
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $name = uniqid('img'). '.'.$file->getClientOriginalExtension();
+            $name = uniqid('img').'.'.$file->getClientOriginalExtension();
             $path = public_path('images');
             $file->move($path, $name);
             $image = new Image();
