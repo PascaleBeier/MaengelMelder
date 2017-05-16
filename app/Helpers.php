@@ -3,8 +3,7 @@
 namespace App;
 
 /**
- * Class Helpers
- * @package App
+ * Class Helpers.
  */
 class Helpers
 {
