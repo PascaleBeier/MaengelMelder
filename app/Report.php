@@ -23,10 +23,10 @@ class Report extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function image()
     {
-        return $this->belongsTo(Image::class);
+        return $this->hasOne(Image::class);
     }
 }

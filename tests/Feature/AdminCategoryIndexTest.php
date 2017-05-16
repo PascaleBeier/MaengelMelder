@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\ User;
-use App\ Category;
+use App\User;
+use App\Category;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\ DatabaseMigrations;
 use Illuminate\Foundation\Testing\ DatabaseTransactions;
@@ -24,8 +24,8 @@ class AdminCategoryIndex extends TestCase
 
         $response = $this->get('/admin/categories');
 
-        $categories->each(function ($category) use ($response) {
+        foreach ($categories as $category) {
             $response->assertSee($category->name);
-        });
+        }
     }
 }

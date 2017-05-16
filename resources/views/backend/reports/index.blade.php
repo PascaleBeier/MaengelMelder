@@ -56,7 +56,13 @@
                     </td>
                     <td>
                         <div class="btn-group">
-                            <a href="{{ route('categories.edit', $report->id) }}" class="btn btn-default">
+                            <a href="{{ route('reports.show', $report->id) }}" clasS="btn btn-default">
+                                @component('icon')
+                                    eye
+                                @endcomponent
+                                Ansehen
+                            </a>
+                            <a href="{{ route('reports.edit', $report->id) }}" class="btn btn-default">
                                 @component('icon')
                                     edit
                                 @endcomponent

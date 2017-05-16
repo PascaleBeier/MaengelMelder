@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Image;
 use App\Report;
+use App\Helpers;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreReport;
+use Psr\Http\Message\ResponseInterface;
 
 class ReportController extends Controller
 {
@@ -15,12 +18,19 @@ class ReportController extends Controller
     protected $report;
 
     /**
+     * @var Helpers
+     */
+    protected $helpers;
+
+    /**
      * ReportController constructor.
      *
      * @param Report $report
+     * @param Helpers $helpers
      */
-    public function __construct(Report $report)
+    public function __construct(Report $report, Helpers $helpers)
     {
+        $this->helpers = $helpers;
         $this->report = $report;
     }
 
@@ -50,7 +60,7 @@ class ReportController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  StoreReport  $request
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
     public function store(StoreReport $request)
     {
@@ -61,15 +71,17 @@ class ReportController extends Controller
         // Attach image to Report if existent
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $path = uniqid('img');
-            $file->move(config('filesystems.disks.images.root'), $path.'.jpg');
+            $name = uniqid('img'). '.'.$file->getClientOriginalExtension();
+            $path = public_path('images');
+            $file->move($path, $name);
             $image = new Image();
-            $image->name = $path;
+            $image->path = 'images';
+            $image->name = $name;
             $image->save();
-            $this->report->image()->associate($image);
+            $this->report->image()->save($image);
         }
 
-        return flash(
+        return $this->helpers->flash(
             'Meldung erfolgreich versendet!',
             'Vielen Dank für Ihre Mithilfe! Wir haben Ihre Meldung erhalten.'
         );
@@ -83,7 +95,7 @@ class ReportController extends Controller
      */
     public function show(Report $report)
     {
-        //
+        return view('backend.reports.show', compact('report'));
     }
 
     /**
