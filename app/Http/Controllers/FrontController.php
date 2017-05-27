@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use GuzzleHttp\Client;
+use Illuminate\Database\QueryException;
 
 class FrontController extends Controller
 {
@@ -32,11 +33,16 @@ class FrontController extends Controller
      */
     public function index()
     {
-        if (! file_exists(storage_path('installed'))) {
-            return redirect('install');
+        try {
+            $categories = $this->category->active();
+        } catch(QueryException $e) {
+            return redirect('setup');
         }
 
-        $categories = $this->category->active();
+        if (count($categories) === 0) {
+            return redirect('setup');
+        }
+
 
         // Get all active Categories
         $apiResponse = $this->client->get('https://maps.googleapis.com/maps/api/geocode/json', ['query' => [

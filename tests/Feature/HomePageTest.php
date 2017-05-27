@@ -20,7 +20,7 @@ class HomePageTest extends TestCase
     public function testRedirectstoInstallation()
     {
         $response = $this->get('/');
-        $response->assertRedirect('/install');
+        $response->assertRedirect('/setup');
     }
 
     /**
@@ -30,8 +30,6 @@ class HomePageTest extends TestCase
      */
     public function testListsActiveCategoriesAfterInstallation()
     {
-        touch(storage_path('installed'));
-
         $this->seed(\DatabaseSeeder::class);
 
         $categories = Category::active();

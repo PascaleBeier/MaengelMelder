@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de-DE" dir="ltr" class="no-js">
+<html lang="de-DE" class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,9 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <style>
+        @stack('styles')
+    </style>
 
     <!-- Scripts -->
     <script>

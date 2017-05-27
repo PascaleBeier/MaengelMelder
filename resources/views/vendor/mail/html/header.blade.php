@@ -1,7 +1,7 @@
 <tr>
     <td class="header">
         <a href="{{ $url }}">
-            {{ config('app.client') }} - {{ $slot }}
+            {{ $slot }}
         </a>
     </td>
 </tr>

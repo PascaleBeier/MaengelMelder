@@ -12,8 +12,12 @@
 */
 
 // Public Routes
-Route::get('/', 'FrontController@index');
+Route::get('/', 'FrontController@index')->name('root');
 Route::post('/', 'ReportController@store');
+
+// Setup Routes
+Route::get('setup', 'SetupController@index');
+Route::post('setup', 'SetupController@store')->name('setup.store');
 
 // Authentication Routes
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
