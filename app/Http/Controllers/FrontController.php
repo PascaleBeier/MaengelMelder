@@ -35,14 +35,13 @@ class FrontController extends Controller
     {
         try {
             $categories = $this->category->active();
-        } catch(QueryException $e) {
+        } catch (QueryException $e) {
             return redirect('setup');
         }
 
         if (count($categories) === 0) {
             return redirect('setup');
         }
-
 
         // Get all active Categories
         $apiResponse = $this->client->get('https://maps.googleapis.com/maps/api/geocode/json', ['query' => [
