@@ -58,7 +58,7 @@ class SetupController extends Controller
             'CLIENT_LOCATION="'.$request->get('clientLocation').'"';
 
         $env = implode(PHP_EOL, preg_grep(
-            "/DB_HOST|DB_DATABASE|DB_USERNAME|DB_PASSWORD|CLIENT_NAME|CLIENT_LOCATION/i",
+            '/DB_HOST|DB_DATABASE|DB_USERNAME|DB_PASSWORD|CLIENT_NAME|CLIENT_LOCATION/i',
             explode("\n", file_get_contents($this->envPath)),
             PREG_GREP_INVERT
         )).$envContent;
