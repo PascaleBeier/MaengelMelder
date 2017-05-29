@@ -46,7 +46,7 @@ class FrontController extends Controller
             ['query' => [
                 'address' => config('app.location'),
                 'key' => config('googlemaps.apiKey'),
-                ]
+                ],
             ])
             ->getBody()
             ->getContents();
