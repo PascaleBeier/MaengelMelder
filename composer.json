@@ -43,7 +43,8 @@
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
         ],
-        "test": "phpunit"
+        "test": "phpunit",
+        "prepublish": "composer install --no-dev --no-interaction --prefer-dist --no-suggest --optimize-autoloader"
     },
     "config": {
         "preferred-install": "dist",

@@ -28,16 +28,7 @@
 
 ### Herunterladen
 
-Die Abhängigkeiten sowie das automatische Laden der Quelldateien des 
-MängelMelders werden über `composer` realisiert.
-
-Die Installation erfolgt über `composer`. Installationshinweise für `composer` finden
-sich [auf getcomposer.org](https://getcomposer.org/). 
-
-Nach der Installation von `composer` kann der MägelMelder wie folgt installiert werden:
-
-(Eingabeaufforderung)
-`composer create-project pascalebeier/maengelmelder maengelmelder --stability="dev"`
+Die neuste Version als [.zip-Datei herunterladen](https://github.com/PascaleBeier/MaengelMelder/archive/master.zip).
 
 ### Erstinstallation
 
