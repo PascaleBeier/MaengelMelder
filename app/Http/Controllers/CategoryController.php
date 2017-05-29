@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers;
 use App\Category;
 use Illuminate\Http\Request;
-use App\Helpers;
 
 /**
- * Class CategoryController
- * @package App\Http\Controllers
+ * Class CategoryController.
  */
 class CategoryController extends Controller
 {
