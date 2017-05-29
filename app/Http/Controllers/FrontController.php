@@ -33,13 +33,8 @@ class FrontController extends Controller
      */
     public function index()
     {
-        try {
-            $categories = $this->category->active();
-        } catch (QueryException $e) {
-            return redirect('setup');
-        }
-
-        if (count($categories) === 0) {
+        // Redirect to Setup if not yet installed
+        if (! file_exists(storage_path('setup'))) {
             return redirect('setup');
         }
 

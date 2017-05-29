@@ -55,15 +55,13 @@ class SetupController extends Controller
             'DB_USERNAME='.$request->get('databaseUser').PHP_EOL.
             'DB_PASSWORD='.$request->get('databasePassword').PHP_EOL.
             'CLIENT_NAME="'.$request->get('clientName').'"'.PHP_EOL.
-            'CLIENT_LOCATION="'.$request->get('clientLocation').'"'.PHP_EOL;
+            'CLIENT_LOCATION="'.$request->get('clientLocation').'"';
 
-        $env = file_get_contents($this->envPath);
-        $rows = explode("\n", $env);
-        $unwanted = 'DB_HOST|DB_DATABASE|DB_USERNAME|DB_PASSWORD|CLIENT_NAME|CLIENT_LOCATION';
-        $cleanArray = preg_grep("/$unwanted/i", $rows, PREG_GREP_INVERT);
-        $cleanString = implode("\n", $cleanArray);
-
-        $env = $cleanString.$envContent;
+        $env = implode(PHP_EOL, preg_grep(
+            "/DB_HOST|DB_DATABASE|DB_USERNAME|DB_PASSWORD|CLIENT_NAME|CLIENT_LOCATION/i",
+            explode("\n", file_get_contents($this->envPath)),
+            PREG_GREP_INVERT
+        )).$envContent;
         $error = [];
 
         try {
@@ -102,6 +100,8 @@ class SetupController extends Controller
         if (! empty($error)) {
             return redirect()->back()->withErrors($error);
         }
+
+        touch(storage_path('install.lock'));
 
         return (new Helpers())->flashTo('Erfolg!', 'Installation abgeschlossen.', 'root');
     }
