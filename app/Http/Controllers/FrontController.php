@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use GuzzleHttp\Client;
-use Illuminate\Database\QueryException;
 
 class FrontController extends Controller
 {
