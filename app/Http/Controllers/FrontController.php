@@ -34,14 +34,21 @@ class FrontController extends Controller
     public function index()
     {
         // Redirect to Setup if not yet installed
-        if (! file_exists(storage_path('setup'))) {
+        if (! file_exists(storage_path('install.lock'))) {
             return redirect('setup');
         }
 
         // Get all active Categories
-        $apiResponse = $this->client->get('https://maps.googleapis.com/maps/api/geocode/json', ['query' => [
+        $categories = $this->category->active();
+
+        // Geocode client location from configured address
+        $apiResponse = $this->client->get(
+            'https://maps.googleapis.com/maps/api/geocode/json',
+            ['query' => [
                 'address' => config('app.location'),
-                'key' => config('googlemaps.apiKey'), ]])
+                'key' => config('googlemaps.apiKey'),
+                ]
+            ])
             ->getBody()
             ->getContents();
 

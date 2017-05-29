@@ -4,9 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use App\Helpers;
 
+/**
+ * Class CategoryController
+ * @package App\Http\Controllers
+ */
 class CategoryController extends Controller
 {
+    /**
+     * @var Helpers
+     */
+    protected $helpers;
+
+    /**
+     * CategoryController constructor.
+     * @param Helpers $helpers
+     */
+    public function __construct(Helpers $helpers)
+    {
+        $this->helpers = $helpers;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -73,12 +92,11 @@ class CategoryController extends Controller
     {
         $category->update($request->all());
 
-        return redirect()->back()->with([
-            'flash.driver' => 'toastr',
-            'flash.type' => 'success',
-            'flash.title' => 'Erfolg',
-            'flash.message' => 'Kategorie '.$category->name.' aktualisiert',
-        ]);
+        return $this->helpers->flashTo(
+            'Erfolg',
+            'Kategorie '.$category->name.' aktualisiert',
+            'categories.index'
+        );
     }
 
     /**

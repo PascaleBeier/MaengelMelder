@@ -10,7 +10,7 @@
             @endcomponent
             Kategorien
         @endslot
-        Kategorien und zugewiesene Mitarbeiter verwalten.
+        Mängelkategorien einsehen und verwalten.
 
     @endcomponent
 

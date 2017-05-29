@@ -47,9 +47,6 @@
         <p>
             {{ $report->body }}
         </p>
-
-
-        
     </div>
 
 @endsection
