@@ -11,20 +11,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // Create the default admin user
         DB::table('users')->insert([
             [
                 'name' => 'admin',
                 'password' => bcrypt('admin'),
                 'email' => 'admin@maengelmelder.app',
             ],
-            [
-                'name' => 'frank',
-                'password' => bcrypt('frank'),
-                'email' => 'frank@maengelmelder.app',
-            ],
         ]);
 
-        $categories = [
+        // Create default categories
+        $categories = collect([
             'Anregungen und Lob',
             'Beleuchtung',
             'Graffiti',
@@ -36,13 +33,8 @@ class DatabaseSeeder extends Seeder
             'Spielplätze',
             'Straßenschilder',
             'Straßenschäden',
-        ];
-
-        foreach ($categories as $category) {
-            DB::table('categories')->insert([
-                'name' => $category,
-                'body' => '',
-            ]);
-        }
+        ])->each(function ($category) {
+            DB::table('categories')->insert(['name' => $category]);
+        });
     }
 }
