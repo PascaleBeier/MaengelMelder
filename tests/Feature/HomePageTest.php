@@ -30,6 +30,8 @@ class HomePageTest extends TestCase
      */
     public function testListsActiveCategoriesAfterInstallation()
     {
+        // Assume installed
+        touch(storage_path('install.lock'));
         $this->seed(\DatabaseSeeder::class);
 
         $categories = Category::active();
