@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Collection;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,7 +17,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'admin',
                 'password' => bcrypt('admin'),
                 'email' => 'admin@maengelmelder.app',
-            ]
+            ],
         ]);
 
         // Create default categories
@@ -34,7 +33,7 @@ class DatabaseSeeder extends Seeder
             'Spielplätze',
             'Straßenschilder',
             'Straßenschäden',
-        ])->each(function($category) {
+        ])->each(function ($category) {
             DB::table('categories')->insert(['name' => $category]);
         });
     }
