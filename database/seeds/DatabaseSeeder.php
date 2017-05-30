@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
             'Straßenschilder',
             'Straßenschäden',
         ])->each(function($category) {
-            DB::table('categories')->insert(['name' => $category']);
+            DB::table('categories')->insert(['name' => $category]);
         });
     }
 }
