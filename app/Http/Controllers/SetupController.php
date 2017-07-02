@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Artisan;
 use function App\Helpers\flashTo;
+use Illuminate\Support\Facades\Artisan;
 
 /**
  * Class SetupController.
