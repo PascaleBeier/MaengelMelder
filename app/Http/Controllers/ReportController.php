@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Image;
 use App\Report;
-use App\Helpers;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreReport;
 use Illuminate\Http\RedirectResponse;
+use function App\Helpers\flash;
 
 class ReportController extends Controller
 {
@@ -17,11 +17,6 @@ class ReportController extends Controller
     protected $report;
 
     /**
-     * @var Helpers
-     */
-    protected $helpers;
-
-    /**
      * ReportController constructor.
      *
      * @param Report $report
@@ -29,7 +24,6 @@ class ReportController extends Controller
      */
     public function __construct(Report $report, Helpers $helpers)
     {
-        $this->helpers = $helpers;
         $this->report = $report;
     }
 
@@ -80,7 +74,7 @@ class ReportController extends Controller
             $this->report->image()->save($image);
         }
 
-        return $this->helpers->flash(
+        return flash(
             'Meldung erfolgreich versendet!',
             'Vielen Dank für Ihre Mithilfe! Wir haben Ihre Meldung erhalten.'
         );

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use function App\Helpers\flashTo;
 
 /**
  * Class SetupController.
@@ -103,6 +103,6 @@ class SetupController extends Controller
 
         touch(storage_path('install.lock'));
 
-        return (new Helpers())->flashTo('Erfolg!', 'Installation abgeschlossen.', 'root');
+        return flashTo('Erfolg!', 'Installation abgeschlossen.', 'root');
     }
 }
