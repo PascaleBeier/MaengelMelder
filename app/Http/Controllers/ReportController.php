@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Image;
 use App\Report;
 use Illuminate\Http\Request;
+use function App\Helpers\flash;
 use App\Http\Requests\StoreReport;
 use Illuminate\Http\RedirectResponse;
-use function App\Helpers\flash;
 
 class ReportController extends Controller
 {
