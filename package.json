@@ -12,7 +12,7 @@
   "license": "MIT",
   "devDependencies": {
     "cross-env": "^5.0.1",
-    "laravel-mix": "^1.0.7"
+    "laravel-mix": "^1.2.2"
   },
   "dependencies": {
     "bootstrap-filestyle": "^1.2.1",
