@@ -11,8 +11,8 @@
   "author": "Pascale Beier <p.beier@ruhr-connect.de>",
   "license": "MIT",
   "devDependencies": {
-    "cross-env": "^5.0.1",
-    "laravel-mix": "^1.2.2"
+    "cross-env": "^5.0.5",
+    "laravel-mix": "^1.4.2"
   },
   "dependencies": {
     "bootstrap-filestyle": "^1.2.1",
